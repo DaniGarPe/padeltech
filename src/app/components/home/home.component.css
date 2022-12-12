@@ -1,0 +1,241 @@
+img {
+    width: 90%;
+    height: auto;
+}
+
+.blogs-card {
+    color: white;
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+.mat-card-title a h1 {
+    color: #9EFF00;
+    margin: 30px;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.mat-card-subtitle {
+    color: darkgray;
+    margin: 30px;
+    font-size: 1.25rem;
+}
+
+.mat-card-content a {
+    color: white;
+    font-size: 1rem;
+    margin-left: 50px;
+}
+
+::ng-deep .mat-menu-content {
+    background-color: #111 !important;
+    color: white;
+    border: 1px solid black;
+    width: 100%;
+}
+
+::ng-deep .mat-menu-content:hover {
+    background-color: #000;
+}
+
+::ng-deep .mat-menu-item {
+    background-color: #000;
+}
+
+::ng-deep .mat-icon-button {
+    background-color: #111;
+}
+
+.footer {
+    background-color: #232323;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #9EFF00;
+}
+
+h2 {
+    color: #9EFF00;
+    text-shadow: 2px 2px 4px black, 0 0 25px black;
+}
+
+h5 {
+    text-shadow: 2px 2px 4px black, 0 0 25px black;
+    color: #D5D5D5;
+}
+
+.buttonCard {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-icon-button {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.material-icons {
+    color: white;
+}
+
+.mat-card-actions {
+    width: 100%;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+}
+
+.category {
+    background-color: rgb(68, 68, 68);
+    color: white;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 10px;
+}
+
+
+/* Slaider */
+
+.calimg {
+    height: 200px;
+    background: #aaa;
+    background-color: #cccccc;
+    background-image: url("https://www.worldpadeltour.com/media-content/2021/05/calendario-provisional-2021-esp.001-1-1100x619.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.imgslaider {
+    height: 400px;
+}
+
+.imgslaider h2 {
+    color: #9EFF00;
+    font-size: 50px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.imgslaider h5 {
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.carousel {
+    margin-top: 70px;
+}
+
+.imgslaider1,
+.imgslaider2,
+.imgslaider3 {
+    height: 400px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.imgslaider1 {
+    background-image: url("https://cdn.pixabay.com/photo/2013/07/14/18/47/paddle-162680_960_720.jpg");
+}
+
+.imgslaider2 {
+    background-image: url("https://cdn.pixabay.com/photo/2015/11/14/07/53/togo-paddle-1042864_960_720.jpg");
+}
+
+.imgslaider3 {
+    background-image: url("https://cdn.pixabay.com/photo/2016/09/19/00/49/paddle-1679370_960_720.jpg");
+}
+
+.imgslaider1 h2,
+.imgslaider2 h2,
+.imgslaider3 h2 {
+    color: #9EFF00;
+    font-size: 50px;
+}
+
+.imgslaider1 h5,
+.imgslaider2 h5,
+.imgslaider3 h5 {
+    color: white;
+}
+
+.texto {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.num {
+    font-size: 1.5rem;
+    color: #9EFF00;
+    padding-right: 20px;
+}
+
+.points {
+    font-size: 1rem;
+    color: #9EFF00;
+    padding-left: 30px;
+}
+
+.nav-pills {
+    background-color: black;
+    border-radius: 5px;
+}
+
+b {
+    color: #9EFF00;
+}
+
+.lateral {
+    background-color: black;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 580px) {
+    .texto {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        line-height: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel {
+        margin-top: 40px;
+    }
+}
+
+.nav-link {
+    color: white;
+}

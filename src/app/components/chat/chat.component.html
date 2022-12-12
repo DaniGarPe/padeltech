@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="titulo text-center">Chat</h1>
+    <h3 class="subtitulo text-center">Habla con otros usuarios, consulta o conoce gente.</h3>
+    <div class="chat-window">
+        <div class="mensajes" id="chat">
+
+            <div *ngFor="let chat of cs.chats" [ngClass]="{ 'text-right': cs.usuario.uid == chat.uid }">
+                <span [ngClass]="{ 'badge-secondary': cs.usuario.uid == chat.uid, 
+                                    'badge-success': cs.usuario.uid != chat.uid}" class="badge">{{ chat.usuario }}</span>
+                <p class="burbuja">{{ chat.mensaje }}</p>
+            </div>
+        </div>
+        <input type="text" class="form-control" name="mensaje" [(ngModel)]="mensaje" (keyup.enter)="enviarMensaje()" placeholder="Enviar mensaje">
+    </div>
+</div>

@@ -1,0 +1,145 @@
+/*Cambiar Menu de sitio*/
+
+.dropdown-menu {
+    background-color: #111111;
+    color: white;
+    padding: 10px;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.titulo {
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+}
+
+.tituloVerde {
+    color: #9EFF00;
+    font-family: 'Righteous', cursive;
+}
+
+.menu {
+    background-color: black;
+    box-shadow: 0px 0px 5px #5B5B5B;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.btn {
+    background-color: #9EFF00;
+    color: black;
+}
+
+.buscar {
+    background-color: #111111;
+    border: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #9EFF00
+}
+
+.btn-entrada {
+    background-color: black;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 2px #373737;
+}
+
+.btn-entrada:hover {
+    background-color: #111111;
+    border: 1px solid black;
+    box-shadow: 0px 0px 20px #5B5B5B;
+    margin-bottom: 20px;
+    color: white;
+}
+
+
+/* PC */
+
+@media screen and (min-width: 480px) {
+    .mobile {
+        display: none;
+    }
+    .destock {
+        display: flex;
+        height: 70px;
+    }
+    .tituloMobile {
+        display: none;
+        width: 100%;
+        font-family: 'Righteous', cursive;
+        font-size: 30px;
+    }
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 480px) {
+    .mobile {
+        display: flex;
+        justify-content: flex-end;
+        background-color: rgba(0, 0, 0, 1);
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    .menu {
+        box-shadow: 0px 0px 0px;
+    }
+    #demo {
+        margin-top: 40px;
+    }
+    .destock {
+        display: none;
+    }
+    .tituloMobile {
+        display: flex;
+        width: 100%;
+        font-family: 'Righteous', cursive;
+        font-size: 30px;
+        background-color: black;
+        height: 50px;
+        justify-content: center;
+        padding-top: 0px;
+    }
+    .tituloMobile b {
+        padding-top: 10px;
+        color: white;
+    }
+    .titulo {
+        display: inline-block;
+        text-align: left;
+    }
+    .btn-mobile {
+        background-color: black;
+    }
+    .menubutton {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0px;
+    }
+    .mini {
+        justify-content: space-between;
+    }
+    .mini spam {
+        font-size: 20px;
+    }
+    .btn-mobile {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+    }
+    .iconmenu {
+        margin-right: 0px;
+        margin-left: 60px;
+    }
+    .iconmenu spam {
+        font-size: 0px;
+    }
+}

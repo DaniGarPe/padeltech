@@ -1,0 +1,167 @@
+<div id="demo" class="carousel slide animated fadeIn" data-ride="carousel" data-interval="4000" data-pause="hover" data-keyboard="true">
+
+    <!-- Indicadores -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- Carousel de fotos -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="imgslaider1">
+                <div class="text-center texto">
+                    <h2>En crecimiento</h2>
+                    <h5>En España ya hay mas de 80.000 personas federadas, más que en el tenis.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="imgslaider2">
+                <div class="text-center texto">
+                    <h2>Para todos</h2>
+                    <h5>El 51,6% de los jugadores son mayores de 39 años.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="imgslaider3">
+                <div class="text-center texto">
+                    <h2>Económico</h2>
+                    <h5>Cualquiera puede comprar una pala, hay palas incluso por menos de 20€</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones laterales -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<div class="container animated fadeIn faster" style="margin-top:100px">
+    <div class="row">
+        <div class="col-sm-4 animated fadeInLeft faster">
+            <div class="lateral">
+                <h2>World Padel Tour</h2>
+                <h3>Calendario:</h3>
+                <a href="https://www.worldpadeltour.com/calendario-world-padel-tour/" target="_blank">
+                    <div class="calimg calendario"></div>
+                </a>
+                <p>Calendario provisional del WPT 2021.</p>
+                <h3>Clasificacion:</h3>
+                <p><b>Clasificacion raking masculino:</b></p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">1</span> Alejandro Galan <span class="points"> 14.790 puntos</span>
+                        </p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">1</span> Juan Lebron <span class="points"> 14.790 puntos</span>
+                        </p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">3</span> F. Belasteguin <span class="points">11.025 puntos</span>
+                        </p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">4</span> Sanyo Gutierrez <span class="points"> 10.330 puntos</span>
+                        </p>
+                    </li>
+                </ul>
+                <br>
+                <p><b>Clasificacion raking femenino:</b></p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">1</span > Gemma Triay <span class="points"> 12.285 puntos</span>
+                        </p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">2</span > Lucia Sainz <span class="points"> 11.445 puntos</span>
+                        </p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">3</span > Alejandra Salazar <span class="points"> 10.630 puntos</span>
+                        </p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link" href="#">
+                            <span class="num">4</span > Ariana Sanchez <span class="points"> 10.335 puntos</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-8 animated fadeInRight faster">
+            <div id="categorias">
+                <button class="btn btns active" onclick="filtro('all')"> Ver todos</button>
+                <button class="btn btns" onclick="filtro('reviews')"> Reviews</button>
+                <button class="btn btns" onclick="filtro('tutoriales')"> Tutoriales</button>
+                <button class="btn btns" onclick="filtro('palas')"> Palas</button>
+                <button class="btn btns" onclick="filtro('pelotas')"> Pelotas</button>
+                <button class="btn btns" onclick="filtro('calzado')"> Calzado</button>
+                <button class="btn btns" onclick="filtro('opinion')"> Opinion</button>
+                <button class="btn btns" onclick="filtro('materiales')"> Materiales</button>
+            </div>
+            <br>
+            <div class="filterDiv show {{ blog.categoria }}" *ngFor="let blog of blogs">
+                <mat-card class="blogs-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <a [routerLink]="['/blog' , blog.id]">
+                                <h1>{{ blog.titulo }}</h1>
+                            </a>
+                        </mat-card-title>
+                        <mat-card-subtitle class="blogSub">
+                            {{ blog.subtitulo }}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <div class="text-center">
+                        <img matCardImage [src]="blog.imagen">
+                    </div>
+                    <mat-card-content>
+                        <a [routerLink]="['/blog' , blog.id]">
+                            Leer más
+                        </a>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button type="button" class="btn category">
+                            {{ blog.categoria }}
+                        </button>
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                            <span class="material-icons">share</span>
+                        </button>
+                    </mat-card-actions>
+                    <mat-menu #menu="matMenu" class="buttonCard">
+                        <button class="shareMenu" mat-menu-item>
+                            <a class="share" href="https://api.whatsapp.com/send?text=PadelTech - {{ blog.titulo }}%20http://localhost:4200/blog/{{ blog.id }}">Compartir en whatsapp</a>
+                        </button>
+                        <button class="shareMenu" mat-menu-item>
+                            <a class="share" href="https://twitter.com/intent/tweet?text= PadelTech - {{ blog.titulo }}&url=http://localhost:4200/blog/{{ blog.id }}"> Compartir en twitter</a>
+                        </button>
+                        <button class="shareMenu" mat-menu-item>
+                            <a class="share" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4200/blog/{{ blog.id }}">Comparte en Facebook</a>
+                        </button>
+                        <button class="shareMenu" mat-menu-item>
+                            <a class="share" href="https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:4200/blog/{{ blog.id }}">Comparte en LinkedIn</a>
+                        </button>
+                    </mat-menu>
+                    <mat-card-footer></mat-card-footer>
+                </mat-card>
+            </div>
+
+        </div>
+    </div>
+</div>

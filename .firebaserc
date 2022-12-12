@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "padeltech-86323": {
+      "hosting": {
+        "padeltech": [
+          "padeltech-86323"
+        ]
+      }
+    }
+  }
+}

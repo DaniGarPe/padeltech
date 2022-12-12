@@ -1,0 +1,132 @@
+<div id="demo" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="hover" data-keyboard="true">
+
+    <!-- Indicadores -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- Carousel de fotos -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="fakeimgslaider1">
+                <h2>TITLE HEADING 1</h2>
+                <h5>Title description, Dec 7, 2017</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="fakeimgslaider2">
+                <h2>TITLE HEADING 2</h2>
+                <h5>Title description, Dec 7, 2017</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="fakeimgslaider3">
+                <h2>TITLE HEADING 3</h2>
+                <h5>Title description, Dec 7, 2017</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones laterales -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<div class="container" style="margin-top:100px">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>World Padel Tour</h2>
+            <h3>Calendario:</h3>
+            <a href="https://www.worldpadeltour.com/calendario-world-padel-tour/" target="_blank">
+                <div class="fakeimg calendario"></div>
+            </a>
+            <p>Calendario provisional del WPT 2021.</p>
+            <h3>Clasificacion:</h3>
+            <p><b>Clasificacion raking masculino:</b></p>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">1. Alejandro Galan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">2. Juan Lebron</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">3. Paquito Navarro</a>
+                </li>
+            </ul>
+            <br>
+            <p><b>Clasificacion raking femenino:</b></p>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">1. Alejandra Salazar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">2. Ariana Sanchez</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">3. Gemma Triay</a>
+                </li>
+            </ul>
+            <br>
+        </div>
+        <div class="col-sm-8">
+            <h1>Buscando: <small>{{ termino }}</small> </h1>
+
+            <div class="alert alert-info animated fadeIn fast" *ngIf="blogs.length == 0">
+                No existen resultados con el término: {{ termino }}
+            </div>
+
+            <mat-card class="blogs-card mt-3 mb-3" *ngFor="let blog of blogs">
+                <mat-card-header>
+                    <mat-card-title>
+                        <a>
+                            <!--<a [routerLink]="['/blog' , blog.idBlog]">-->
+                            {{ blog.titulo }}
+                        </a>
+                    </mat-card-title>
+                    <mat-card-subtitle class="blogSub">
+                        {{ blog.subtitulo }}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <img matCardImage [src]="blog.imagen">
+                <mat-card-content>
+                    <p>
+                        {{ blog.texto }}
+                    </p>
+                    <a>
+                    Leer más
+                </a>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button type="button" class="btn category">
+                    {{ blog.categoria }}
+                </button>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <span class="material-icons">share</span>
+                </button>
+                    <mat-menu #menu="matMenu" class="buttonCard">
+                        <button class="shareMenu" mat-menu-item>
+                        <a class="share" href="https://api.whatsapp.com/send?text=PadelTech - {{ blog.titulo }}%20http://localhost:4200/blog/{{ blog.id }}">Compartir en whatsapp</a>
+                    </button>
+                        <button class="shareMenu" mat-menu-item>
+                        <a class="share" href="https://twitter.com/intent/tweet?text= PadelTech - {{ blog.titulo }}&url=http://localhost:4200/blog/{{ blog.id }}"> Compartir en twitter</a>
+                    </button>
+                        <button class="shareMenu" mat-menu-item>
+                        <a class="share" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4200/blog/{{ blog.id }}">Comparte en Facebook</a>
+                    </button>
+                        <button class="shareMenu" mat-menu-item>
+                        <a class="share" href="https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:4200/blog/{{ blog.id }}">Comparte en LinkedIn</a>
+                    </button>
+                    </mat-menu>
+                </mat-card-actions>
+                <mat-card-footer></mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

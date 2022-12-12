@@ -1,0 +1,64 @@
+<div class="container">
+    <h1>Blog</h1>
+    <h2>Titulo del blog</h2>
+    <hr>
+    <div class="row">
+        <div class="col text-right">
+            <button class="btn btn-danger" routerLink="/admin">
+                <i class="fa fa-arrow-left">
+                    Volver
+                </i>
+            </button>
+        </div>
+    </div>
+    <div class="row animated fadeIn faster">
+        <div class="col">
+            <form (ngSubmit)="guardar( formulario )" #formulario="ngForm">
+                <div class="form-group">
+                    <label for="">Blog ID</label>
+                    <input type="text" class="form-control id" disabled="disabled" placeholder="Blog ID" [(ngModel)]="nuevoBlog.id" name="id">
+                    <p class="form-text text-muted">Este campo es autogenerado</p>
+                </div>
+                <div class="form-group">
+                    <label for="">Titutlo</label>
+                    <input type="text" class="form-control" placeholder="Titulo" [(ngModel)]="nuevoBlog.titulo" name="titulo" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Subtitulo</label>
+                    <input type="text" class="form-control" placeholder="Subtitulo" [(ngModel)]="nuevoBlog.subtitulo" name="subtitulo" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Imagen</label>
+                    <input type="text" class="form-control" placeholder="Imagen" [(ngModel)]="nuevoBlog.imagen" name="imagen">
+                </div>
+                <div class="form-group">
+                    <label for="">Texto</label>
+                    <textarea class="form-control" placeholder="Texto" [(ngModel)]="nuevoBlog.texto" name="texto" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Categoria</label>
+                    <br>
+                    <select name="categoria" [(ngModel)]="nuevoBlog.categoria" required>
+                        <option disabled selected>Selecciona una categoria</option>
+                        <option value="reviews">Reviews</option>
+                        <option value="tutoriales">Tutoriales</option>
+                        <option value="palas">Palas</option>
+                        <option value="pelotas">Pelotas</option>
+                        <option value="calzado">Calzado</option>
+                        <option value="opinion">Opinion</option>
+                        <option value="pelotas">Pelotas</option>
+                        <option value="materiales">Materiales</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary w-25">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

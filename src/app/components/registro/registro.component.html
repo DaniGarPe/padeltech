@@ -1,0 +1,50 @@
+<div class="fondo"></div>
+<div class="oscuro"></div>
+<div class="container animated fadeInRight">
+    <form class="form form-login text-center" (ngSubmit)="onSubmit( registroForm )" #registroForm="ngForm">
+        <h1 class="form-title">
+            <b>Crear nueva cuenta</b>
+        </h1>
+        <div class="form-container">
+            <div class="m-b-40">
+                <label for="email" class="form-label">Email</label>
+                <br>
+                <input type="email" name="email" placeholder="Email" [(ngModel)]="usuario.email" required email>
+                <br>
+                <span *ngIf="registroForm.submitted && registroForm.controls['email'].errors" class="text-danger animated fadeIn">
+                    El correo es obligatorio
+                </span>
+            </div>
+            <div class="m-b-40">
+                <label for="nombre" class="form-label">Nombre y apellidos</label>
+                <br>
+                <input type="text" name="nombre" placeholder="Nombre y apellidos" [(ngModel)]="usuario.nombre" minlength="2" required>
+                <br>
+                <span *ngIf="registroForm.submitted && registroForm.controls['nombre'].errors" class="text-danger animated fadeIn">
+                    El nombre es obligatorio
+                </span>
+            </div>
+            <div class="m-b-40">
+                <label for="nombre" class="form-label">Contraseña</label>
+                <br>
+                <input type="password" name="password" placeholder="Contraseña" [(ngModel)]="usuario.password" minlength="6" required>
+                <br>
+                <span *ngIf="registroForm.submitted && registroForm.controls['password'].errors" class="text-danger animated fadeIn">
+                    La contraseña debe de ser más de 6 letras
+                </span>
+            </div>
+            <div class="form-check m-b-20">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" id="ckb1" name="remember-me" [(ngModel)]="recordarme">
+                <label class="form-check-label" for="ckb1">Recordar mi usuario</label>
+            </div>
+            <div class="m-b-20">
+                <a routerLink="/login" class="txt">
+                    ¿Ya tienes cuenta? Inicia sesión
+                </a>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn w-100 p-2">Crear cuenta</button>
+            </div>
+        </div>
+    </form>
+</div>

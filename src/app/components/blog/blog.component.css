@@ -1,0 +1,99 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 75%;
+    border-radius: 15px;
+}
+
+.mat-card-title h1 {
+    color: #9EFF00;
+    margin: 30px;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.mat-card-subtitle {
+    color: darkgray;
+    margin: 30px;
+    font-size: 1.25rem;
+}
+
+.mat-card-content p {
+    color: white;
+    font-size: 1rem;
+    text-indent: 50px;
+    text-align: justify;
+    white-space: pre-wrap;
+}
+
+.mat-icon-button {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.material-icons {
+    color: white;
+}
+
+.mat-card-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category {
+    background-color: rgb(68, 68, 68);
+    color: white;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 10px;
+}
+
+::ng-deep .mat-menu-content {
+    background-color: #111 !important;
+    color: white;
+    border: 1px solid black;
+    width: 100%;
+}
+
+::ng-deep .mat-menu-content:hover {
+    background-color: #000;
+}
+
+::ng-deep .mat-menu-item {
+    background-color: #000;
+}
+
+::ng-deep .mat-icon-button {
+    background-color: #111;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #9EFF00;
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        padding: 10px;
+        background-color: black;
+        width: 95%;
+        border-radius: 15px;
+    }
+    img {
+        padding: 10px;
+    }
+}

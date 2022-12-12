@@ -1,0 +1,139 @@
+.container {
+    margin-top: 70px;
+}
+
+.texto div {
+    height: 200px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-spinner {
+    color: grey !important;
+}
+
+.custom-spinner-color {
+    stroke: #234188 !important;
+}
+
+.div-table {
+    display: flex;
+    width: 100%;
+    overflow-x: none;
+    padding-left: 140px;
+    margin-left: 0px;
+}
+
+thead {
+    background-color: black;
+    color: #9EFF00;
+}
+
+.agregar {
+    background-color: black;
+    border: 1px solid #9EFF00;
+    color: #9EFF00;
+}
+
+.btn-info {
+    background-color: #9EFF00;
+    color: black;
+    padding: 15px;
+    margin: 5px;
+}
+
+.btn-danger {
+    background-color: red;
+    color: black;
+    padding: 15px;
+    margin: 5px;
+}
+
+.sidebar {
+    background: #000;
+    padding: 20px 0;
+    height: 100%;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    width: 100%;
+    background-color: #000;
+}
+
+.sidebar a.active {
+    color: #9EFF00;
+    background-color: #111;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.salir {
+    margin: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    .div-table {
+        overflow-x: auto;
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .sidebar {
+        height: auto;
+        background-color: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .sidebar a {
+        padding: 0;
+        text-align: center;
+    }
+    .salir {
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        margin-top: 60px;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .container {
+        margin: 0;
+        padding: 0;
+        margin-top: 70px;
+        width: 100%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(43, 43, 43);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

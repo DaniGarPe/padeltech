@@ -1,0 +1,38 @@
+<div class="container">
+    <mat-card class="card animated fadeIn faster">
+        <mat-card-header>
+            <mat-card-title>
+                <h1>{{ nuevoBlog.titulo }}</h1>
+            </mat-card-title>
+            <mat-card-subtitle>{{ nuevoBlog.subtitulo }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ nuevoBlog.imagen }}" alt="Foto de {{ nuevoBlog.titulo }}">
+        <mat-card-content>
+            <p>
+                {{ nuevoBlog.texto }}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="button" class="btn category">
+                {{ nuevoBlog.categoria }}
+            </button>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
+                <span class="material-icons">share</span>
+            </button>
+        </mat-card-actions>
+        <mat-menu #menu="matMenu" class="buttonCard">
+            <button class="shareMenu" mat-menu-item>
+                <a class="share" href="https://api.whatsapp.com/send?text=PadelTech - {{ nuevoBlog.titulo }}%20http://localhost:4200/blog/{{ nuevoBlog.id }}">Compartir en whatsapp</a>
+            </button>
+            <button class="shareMenu" mat-menu-item>
+                <a class="share" href="https://twitter.com/intent/tweet?text= PadelTech - {{ nuevoBlog.titulo }}&url=http://localhost:4200/blog/{{ nuevoBlog.id }}"> Compartir en twitter</a>
+            </button>
+            <button class="shareMenu" mat-menu-item>
+                <a class="share" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4200/blog/{{ nuevoBlog.id }}">Comparte en Facebook</a>
+            </button>
+            <button class="shareMenu" mat-menu-item>
+                <a class="share" href="https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:4200/blog/{{ nuevoBlog.id }}">Comparte en LinkedIn</a>
+            </button>
+        </mat-menu>
+    </mat-card>
+</div>

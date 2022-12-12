@@ -1,0 +1,157 @@
+<div class="container animated fadeIn faster">
+    <div class="row">
+        <div class="col-12 col-lg-2">
+            <div class="sidebar">
+                <a class="active" routerLink="/admin">Blogs</a>
+                <a routerLink="/new-blog/nuevo">Nuevo Blog</a>
+                <a routerLink="/subir">Subir Imagenes</a>
+                <a routerLink="/chat">Chat</a>
+                <button class="btn btn-outline-danger salir" (click)="salir()">
+                    Salir
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-lg-10">
+            <div class="row">
+                <div class="col text-right">
+                    <button class="btn agregar mt-5" routerLink="/new-blog/nuevo">
+                        <i class="fa fa-plus">
+                            Agregar
+                        </i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 div-table">
+                <table class="table mt-3 table-dark table-striped animated fadeIn faster" *ngIf="!cargando && blogs.length > 0">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Subtitulo</th>
+                            <th scope="col">Texto</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let blog of blogs; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ blog.titulo }}</td>
+                            <td>{{ blog.subtitulo }}</td>
+                            <td class="texto">
+                                <div>{{ blog.texto }}</div>
+                            </td>
+                            <td>{{ blog.imagen }}</td>
+                            <td>{{ blog.categoria }}</td>
+                            <td>
+                                <button type="button" class="btn btn-info" [routerLink]="['/new-blog', blog.id]">
+                            <i class="fa fa-pen"></i>
+                        </button>
+                                <button class="btn btn-danger" (click)="borrarBlog( blog, i)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-warning text-center mt-3 animated fadeIn faster" *ngIf="!cargando && blogs.length === 0">
+                <h4 class="alert-heading">No hay registros</h4>
+                <p class="loading text-center">
+                    <i class="fa fa-exclamation fa-2x"></i>
+                </p>
+                <p class="mb-0">
+                    Espere por favor.
+                </p>
+            </div>
+            <div class="alert alert-info text-center mt-3 animated fadeIn faster" *ngIf="cargando">
+                <h4 class="alert-heading">Cargando</h4>
+                <p class="loading text-center">
+                    <i class="fas fa-circle-notch fa-spin  fa-2x"></i>
+                </p>
+                <p class="mb-0">
+                    Espere por favor.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+<div class="sidebar col-sm-4">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <button class="btn btn-outline-danger" (click)="salir()">
+        Salir
+    </button>
+</div>
+<div class="container col-sm-4">
+    <h1>Zona Admin</h1>
+    <hr>
+
+    <div class="row">
+        <div class="col text-right">
+            <button class="btn agregar" routerLink="/new-blog/nuevo">
+                <i class="fa fa-plus">
+                    Agregar
+                </i>
+            </button>
+        </div>
+    </div>
+    <div class="div-table">
+        <table class="table mt-3 table-dark table-striped animated fadeIn faster" *ngIf="!cargando && blogs.length > 0">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Subtitulo</th>
+                    <th scope="col">Texto</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let blog of blogs; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ blog.titulo }}</td>
+                    <td>{{ blog.subtitulo }}</td>
+                    <td>{{ blog.texto }}</td>
+                    <td>{{ blog.imagen }}</td>
+                    <td>{{ blog.categoria }}</td>
+                    <td>
+                        <button type="button" class="btn btn-info" [routerLink]="['/new-blog', blog.id]">
+                            <i class="fa fa-pen"></i>
+                        </button>
+                        <button class="btn btn-danger" (click)="borrarBlog( blog, i)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="alert alert-warning text-center mt-3 animated fadeIn faster" *ngIf="!cargando && blogs.length === 0">
+        <h4 class="alert-heading">No hay registros</h4>
+        <p class="loading text-center">
+            <i class="fa fa-exclamation fa-2x"></i>
+        </p>
+        <p class="mb-0">
+            Espere por favor.
+        </p>
+    </div>
+    <div class="alert alert-info text-center mt-3 animated fadeIn faster" *ngIf="cargando">
+        <h4 class="alert-heading">Cargando</h4>
+        <p class="loading text-center">
+            <i class="fas fa-circle-notch fa-spin  fa-2x"></i>
+        </p>
+        <p class="mb-0">
+            Espere por favor.
+        </p>
+    </div>
+</div>
+-->

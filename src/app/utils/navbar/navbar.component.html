@@ -1,0 +1,109 @@
+<a class="navbar-brand tituloMobile fixed-top" routerLink='/'><b>Padel<span class="tituloVerde">Tech</span></b></a>
+<nav class="navbar navbar-expand-lg navbar-dark menu fixed-bottom mobile">
+    <div class="cl-sm-10 menubutton">
+        <a class="navbar-brand mini" routerLink='/home'>
+            <span class="material-icons">home</span>
+        </a>
+        <a class="navbar-brand mini" routerLink='/login'>
+            <span class="material-icons">account_circle</span>
+        </a>
+
+        <a class="navbar-brand mini" routerLink='/chat'>
+            <span class="material-icons">chat</span>
+        </a>
+        <a class="navbar-brand mini" routerLink='/admin'>
+            <span class="material-icons">admin_panel_settings</span>
+        </a>
+        <a class="navbar-brand mini" href="#" type="button" data-toggle="collapse" data-target="#navbM">
+            <span class="material-icons" id="primero" style="visibility:visible; display:block;" onclick="menu_Phone_close()">menu</span>
+            <span class="material-icons" id="segundo" style="visibility:hidden; display:none;" onclick="menu_Phone_open()">close</span>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbM">
+        <ul class="navbar-nav mr-auto center">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbardrop" data-toggle="dropdown">Blog</a>
+                <div class="dropdown-menu">
+                    <p><b>Categorias: </b></p>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('all')"> Ver todos</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('reviews')"> Reviews</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('tutoriales')"> Tutoriales</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('palas')"> Palas</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('pelotas')"> Pelotas</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('calzado')"> Calzado</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('opinion')"> Opinion</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('materiales')"> Materiales</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" routerLink='login'>Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" routerLink='admin'>Editar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" routerLink='chat'>Chat</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 buscar col-10 col-lg-10" type="text" placeholder="Buscar">
+            <button class="btn btn-success my-2 my-sm-0 col-2 col-lg-2" type="button"><span class="material-icons">search</span></button>
+        </form>
+    </div>
+</nav>
+<script>
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {
+        myFunction()
+    };
+
+    function myFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    }
+</script>
+
+<!-- Menu PC -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark menu fixed-top destock" routerLinkActive='active'>
+    <a class="navbar-brand titulo" routerLink='/'><b>Padel<span class="tituloVerde">Tech</span></b></a>
+    <a class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+        <span class="material-icons" id="abrir" style="visibility:visible; display:block;" onclick="menu_PC_close()">menu</span>
+        <span class="material-icons" id="cerrar" style="visibility:hidden; display:none;" onclick="menu_PC_open()">close</span>
+    </a>
+    <div class="collapse navbar-collapse" id="navb">
+        <ul class="navbar-nav mr-auto center">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbardrop" data-toggle="dropdown">Blog</a>
+                <div class="dropdown-menu">
+                    <p><b>Categorias: </b></p>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('all')"> Ver todos</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('reviews')"> Reviews</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('tutoriales')"> Tutoriales</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('palas')"> Palas</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('pelotas')"> Pelotas</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('calzado')"> Calzado</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('opinion')"> Opinion</a>
+                    <a class="dropdown-item" routerLink='/' onclick="filtro('materiales')"> Materiales</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" routerLink='login'>Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" routerLink='admin'>Editar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" routerLink='chat'>Chat</a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 buscar" type="text" placeholder="Buscar" (keyup.enter)="buscarBlog( buscarTexto.value )" #buscarTexto>
+            <button class="btn btn-success my-2 my-sm-0" type="button" (click)="buscarBlog( buscarTexto.value )">Buscar</button>
+        </form>
+    </div>
+</nav>
